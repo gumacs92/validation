@@ -22,10 +22,10 @@ class ImageWidth extends AbstractRule
         $this->value = $value;
         if (! is_array($value) || ! isset($value['tmp_name'])) {
             $this->success = false;
-        } else if(! file_exists($value['tmp_name'])) {
-            if($value['error'] === UPLOAD_ERR_NO_FILE ){
+        } elseif (! file_exists($value['tmp_name'])) {
+            if ($value['error'] === UPLOAD_ERR_NO_FILE) {
                 $this->success = true;
-            }else{
+            } else {
                 $this->success = false;
             }
         } else {

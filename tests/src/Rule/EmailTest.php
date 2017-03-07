@@ -17,5 +17,4 @@ class EmailTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->rule->validate(''));
         $this->assertTrue($this->rule->validate('me@domain.com'));
     }
-
 }

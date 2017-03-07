@@ -9,7 +9,6 @@ class CustomErrorMessage extends ErrorMessage
     {
         return '!!!' . parent::__toString();
     }
-
 }
 
 class ErrorMessageTest extends \PHPUnit_Framework_TestCase
@@ -31,6 +30,4 @@ class ErrorMessageTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('!!!This input must be a valid email address', (string) $messages[0]);
     }
-
-
 }

@@ -20,5 +20,4 @@ class BetweenTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->rule->validate(110));
         $this->assertTrue($this->rule->validate(80));
     }
-
 }

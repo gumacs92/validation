@@ -688,5 +688,4 @@ class HelperTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(Helper::time('20:00:15', 'H:i:s'));
         $this->assertFalse(Helper::time('20:00:99'));
     }
-
 }

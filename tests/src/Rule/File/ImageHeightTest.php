@@ -28,5 +28,4 @@ class ImageHeightTest extends \PHPUnit_Framework_TestCase
         $this->validator->setOption(ImageHeight::OPTION_MIN, 200);
         $this->assertTrue($this->validator->validate($file));
     }
-
 }

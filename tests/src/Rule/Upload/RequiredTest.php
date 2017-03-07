@@ -8,7 +8,6 @@
 
 namespace Sirius\Validation\Rule\Upload;
 
-
 class RequiredTest extends \PHPUnit_Framework_TestCase
 {
 

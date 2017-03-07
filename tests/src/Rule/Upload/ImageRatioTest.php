@@ -106,5 +106,4 @@ class ImageRatioTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertTrue($this->validator->validate($file));
     }
-
 }

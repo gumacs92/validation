@@ -34,8 +34,12 @@ class RuleFactoryTest extends \PHPUnit_Framework_TestCase
 
     function testCustomErrorMessages()
     {
-        $this->ruleFactory->register('even', '\Sirius\Validation\TestingCustomRule', 'This should be even',
-            '{label} should be even');
+        $this->ruleFactory->register(
+            'even',
+            '\Sirius\Validation\TestingCustomRule',
+            'This should be even',
+            '{label} should be even'
+        );
 
         $validatorWithLabel = $this->ruleFactory->createRule('even', null, null, 'Number');
         $validatorWithLabel->validate(4);
@@ -44,6 +48,5 @@ class RuleFactoryTest extends \PHPUnit_Framework_TestCase
         $validator = $validator = $this->ruleFactory->createRule('even');
         $validator->validate(4);
         $this->assertEquals('This should be even', (string) $validator->getMessage());
-
     }
 }

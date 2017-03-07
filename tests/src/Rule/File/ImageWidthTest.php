@@ -28,5 +28,4 @@ class ImageWidthTest extends \PHPUnit_Framework_TestCase
         $this->validator->setOption(ImageWidth::OPTION_MIN, 200);
         $this->assertTrue($this->validator->validate($file));
     }
-
 }

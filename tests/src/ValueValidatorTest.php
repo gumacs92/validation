@@ -11,8 +11,12 @@ class ValueValidatorTest extends \PHPUnit_Framework_TestCase
 
     function testAddingValidationRulesRegularly()
     {
-        $this->validator->add('required')->add('minlength', '{"min":4}',
-            '{label} should have at least {min} characters', 'Item');
+        $this->validator->add('required')->add(
+            'minlength',
+            '{"min":4}',
+            '{label} should have at least {min} characters',
+            'Item'
+        );
         $this->validator->validate('ab');
         $this->assertEquals(array(
             'Item should have at least 4 characters'
@@ -38,8 +42,12 @@ class ValueValidatorTest extends \PHPUnit_Framework_TestCase
 
     function testRemovingAllRules()
     {
-        $this->validator->add('required')->add('minlength', '{"min":4}',
-            '{label} should have at least {min} characters', 'Item');
+        $this->validator->add('required')->add(
+            'minlength',
+            '{"min":4}',
+            '{label} should have at least {min} characters',
+            'Item'
+        );
         $this->validator->validate('ab');
         $this->assertEquals(array(
             'Item should have at least 4 characters'
@@ -57,8 +65,11 @@ class ValueValidatorTest extends \PHPUnit_Framework_TestCase
     function testDefaultLabel()
     {
         $this->validator->setLabel('Item');
-        $this->validator->add('required')->add('minlength', '{"min":4}',
-            '{label} should have at least {min} characters');
+        $this->validator->add('required')->add(
+            'minlength',
+            '{"min":4}',
+            '{label} should have at least {min} characters'
+        );
         $this->validator->validate('ab');
         $this->assertEquals(array(
             'Item should have at least 4 characters'

@@ -8,7 +8,6 @@
 
 namespace Sirius\Validation\Rule\Upload;
 
-
 use Sirius\Validation\Rule\AbstractRule;
 
 class Required extends AbstractRule

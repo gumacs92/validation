@@ -73,7 +73,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         // execute the validation again without data
         $this->validator->validate();
         $this->assertEquals(0, count($this->validator->getMessages()));
-
     }
 
     function testIfMissingItemsValidateAgainstTheRequiredRule()
@@ -148,12 +147,16 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             // validator with defaults
             ->add('itemc', 'email');
         $this->validator->validate(array( 'item' => 'ab', 'itema' => 'abc', 'itemc' => 'abc' ));
-        $this->assertEquals(array( 'Item should have at least 4 characters' ),
-            array( (string) $this->validator->getMessages('item')[0] ));
+        $this->assertEquals(
+            array( 'Item should have at least 4 characters' ),
+            array( (string) $this->validator->getMessages('item')[0] )
+        );
         $this->assertEquals(array( 'Item should have at least 8 characters' ), $this->validator->getMessages('itema'));
         $this->assertEquals(array( 'Item B is required' ), $this->validator->getMessages('itemb'));
-        $this->assertEquals(array( 'This input must be a valid email address' ),
-            $this->validator->getMessages('itemc'));
+        $this->assertEquals(
+            array( 'This input must be a valid email address' ),
+            $this->validator->getMessages('itemc')
+        );
     }
 
     function testAddingValidationRulesViaStrings()
@@ -171,8 +174,10 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array( 'Item should have at least 4 characters' ), $this->validator->getMessages('item'));
         $this->assertEquals(array( 'Item should have at least 8 characters' ), $this->validator->getMessages('itema'));
         $this->assertEquals(array( 'Item B is required' ), $this->validator->getMessages('itemb'));
-        $this->assertEquals(array( 'This input must be a valid email address' ),
-            $this->validator->getMessages('itemc'));
+        $this->assertEquals(
+            array( 'This input must be a valid email address' ),
+            $this->validator->getMessages('itemc')
+        );
     }
 
     function testExceptionOnInvalidValidatorOptions()
@@ -280,5 +285,4 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->validator->validate(array());
         $this->assertEquals(2, count($this->validator->getMessages()));
     }
-
 }

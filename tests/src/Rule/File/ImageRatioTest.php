@@ -52,5 +52,4 @@ class ImageRatioTest extends \PHPUnit_Framework_TestCase
         $file = realpath(__DIR__ . '/../../../fixitures/') . DIRECTORY_SEPARATOR . '4_by_3_image.jpg';
         $this->assertTrue($this->validator->validate($file));
     }
-
 }

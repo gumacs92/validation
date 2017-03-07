@@ -2,7 +2,6 @@
 
 namespace Sirius\Validation;
 
-
 class ComplexTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -57,5 +56,4 @@ class ComplexTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('This field is required', (string) $messages['feedback'][0]);
         $this->assertEquals('This field is required', (string) $messages['lines[0][price]'][0]);
     }
-
 }

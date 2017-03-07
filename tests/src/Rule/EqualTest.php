@@ -24,5 +24,4 @@ class EqualTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->rule->validate('abc'));
         $this->assertTrue($this->rule->validate(null));
     }
-
 }
